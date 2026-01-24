@@ -1,90 +1,55 @@
-# GAN Lab: An Interactive, Visual Experimentation Tool for Generative Adversarial Networks
+# GAN Lab
 
-By 
-[Minsuk Kahng](http://minsuk.com),
-[Nikhil Thorat](https://twitter.com/nsthorat),
-[Polo Chau](https://www.cc.gatech.edu/~dchau/),
-[Fernanda Viégas](http://fernandaviegas.com/), and 
-[Martin Wattenberg](http://www.bewitched.com/)
+GAN Labは、Generative Adversarial Networks（GAN）の仕組みをブラウザ上で視覚的に学習・実験できるツールです。
 
-## Overview
+## セットアップ
 
-GAN Lab is a novel interactive visualization tool for anyone to learn and experiment with Generative Adversarial Networks (GANs), a popular class of complex deep learning models. With GAN Lab, you can interactively train GAN models for 2D data distributions and visualize their inner-workings, similar to [TensorFlow Playground](http://playground.tensorflow.org/).
+このプロジェクトは古いライブラリを使用しているため、記述された特定のバージョンを使用する必要があります。
 
-GAN Lab uses [TensorFlow.js](https://js.tensorflow.org/), an in-browser GPU-accelerated deep learning library. Everything, from model training to visualization, is implemented with JavaScript. Users only need a web browser like Chrome to run GAN Lab. Our implementation approach significantly broadens people's access to interactive tools for deep learning. 
+### 1. 前提条件
+- **nvm** (Node Version Manager)
+- **yarn**
 
-![Screenshot of GAN Lab](ganlab-teaser.png)
-
-
-## Working Demo
-
-Click the following link:
-
-[https://poloclub.github.io/ganlab/](https://poloclub.github.io/ganlab/)
-
-It runs on most modern web browsers. We suggest you use Google Chrome.
-
-
-## Development
-
-This section describes how you can develop GAN Lab.
-
-### Install Dependencies
-
-Run the following commands: 
+### 2. インストール
 
 ```bash
-$ git clone https://github.com/poloclub/ganlab.git
-$ cd ganlab
-$ yarn prep
+# Node.js 8 を使用 (必須)
+nvm install 8
+nvm use 8
+
+# Yarn バージョンを 1.x に固定
+yarn set version 1.22.22
+
+# 依存関係のインストール
+yarn install
+
+# 準備
+yarn prep
 ```
 
-It's unlikely, but you may need to install some basic JavaScript-related dependencies (e.g., yarn).
+## 実行・開発
 
-
-### Running Your Demo
-
-Run the following command:
+以下のコマンドで開発サーバーを起動し、TypeScriptを自動コンパイル（Watchモード）します。
 
 ```bash
-$ ./scripts/watch-demo
-
->> Waiting for initial compile...
->> 3462522 bytes written to demo/bundle.js (2.17 seconds) at 00:00:00
->> Starting up http-server, serving ./
->> Available on:
->>   http://127.0.0.1:8080
->> Hit CTRL-C to stop the server
+./start-dev.sh
 ```
 
-Then visit `http://localhost:8080/demo/`. 
+起動後、ブラウザで [http://localhost:8080/demo/](http://localhost:8080/demo/) を開いてください。
 
-The `watch-demo` script monitors for changes of typescript code (e.g., `demo/ganlab.ts`)
-and compiles the code for you.
+> [!NOTE]
+> `start-dev.sh` を使用しない場合は、`nvm use 8` を実行してから `./scripts/watch-demo` を実行してください。
+
+## デプロイ用ビルド
+
+GitHub Pages等にデプロイするための静的ファイルを生成する場合は、以下のコマンドを実行します。
+
+```bash
+nvm use 8
+./scripts/build-demo
+```
+
+ビルドされたファイルは `docs/` ディレクトリに生成されます。
 
 
-## Credit
 
-GAN Lab was created by 
-[Minsuk Kahng](http://minsuk.com),
-[Nikhil Thorat](https://twitter.com/nsthorat),
-[Polo Chau](https://www.cc.gatech.edu/~dchau/),
-[Fernanda Viégas](http://www.fernandaviegas.com/), and 
-[Martin Wattenberg](http://www.bewitched.com/),
-which was the result of a research collaboration between Georgia Tech and Google Brain/[PAIR](https://ai.google/research/teams/brain/pair).
-We also thank Shan Carter and Daniel Smilkov, 
-[Google Big Picture team](https://research.google.com/bigpicture/) and 
-[Google People + AI Research (PAIR)](https://ai.google/research/teams/brain/pair), and 
-[Georgia Tech Visualization Lab](http://vis.gatech.edu/)
-for their feedback.
- 
-For more information, check out 
-[our research paper](http://minsuk.com/research/papers/kahng-ganlab-vast2018.pdf):     
- 
-[Minsuk Kahng](http://minsuk.com),
-[Nikhil Thorat](https://twitter.com/nsthorat),
-[Polo Chau](https://www.cc.gatech.edu/~dchau/),
-[Fernanda Viégas](http://www.fernandaviegas.com/), and 
-[Martin Wattenberg](http://www.bewitched.com/).
-"GAN Lab: Understanding Complex Deep Generative Models using Interactive Visual Experimentation."
-*IEEE Transactions on Visualization and Computer Graphics, 25(1) ([VAST 2018](http://ieeevis.org/year/2018/welcome))*, Jan. 2019.

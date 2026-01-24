@@ -4,8 +4,8 @@ Run the following command:
 
 ```bash
 $ ./scripts/deploy-demo
-Stored bundle in output/bundle.js
-Saved bundled demo at output/index.html
+Stored bundle in docs/bundle.js
+Saved bundled demo at docs/index.html
 ```
 
 It will create two files in this folder: `index.html` and `bundle.js`. 
