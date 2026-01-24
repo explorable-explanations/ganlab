@@ -20,7 +20,7 @@ const spawn = require('cross-spawn');
 const shell = require('shelljs');
 
 const tsPath = path.join('demo', 'ganlab.ts');
-const outputPath = path.join('output', 'bundle.js');
+const outputPath = path.join('docs', 'bundle.js');
 
 const cmd = path.join('node_modules', '.bin', 'browserify');
 const child = spawn(cmd,

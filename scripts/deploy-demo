@@ -19,10 +19,10 @@ const path = require('path');
 const spawn = require('cross-spawn');
 
 const demoFilePath = path.join('demo', 'index.html')
-const bundlePath = path.join('output', 'index.html')
+const bundlePath = path.join('docs', 'index.html')
 
 const cmd = path.join('scripts', 'build-demo');
-const child = spawn(cmd, [], {detached: false});
+const child = spawn(cmd, [], { detached: false });
 
 child.stdout.pipe(process.stdout);
 child.stderr.pipe(process.stderr);
@@ -30,8 +30,8 @@ child.stderr.pipe(process.stderr);
 child.on('close', () => {
   const cmd = path.join('node_modules', '.bin', 'polymer-bundler');
   const child = spawn(cmd, ['--inline-scripts', '--inline-css',
-    '--out-html', bundlePath, demoFilePath], {detached: false});  
+    '--out-html', bundlePath, demoFilePath], { detached: false });
   child.stdout.pipe(process.stdout);
-  child.stderr.pipe(process.stderr);  
+  child.stderr.pipe(process.stderr);
   child.on('close', () => console.log(`Saved bundled demo at ${bundlePath}`));
 });
