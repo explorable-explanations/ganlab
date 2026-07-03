@@ -111,10 +111,32 @@
       background: #183D4E;
     }
 
+    .mdl-button--fab,
+    .mdl-button--icon {
+      align-items: center;
+      background: none;
+      border: 0;
+      border-radius: 50%;
+      cursor: pointer;
+      display: inline-flex;
+      height: 40px;
+      justify-content: center;
+      width: 40px;
+    }
+
+    .mdl-button--icon:hover {
+      background: #ddd;
+    }
+
+    #play-pause-button {
+      height: 56px;
+      width: 56px;
+    }
+
     #play-pause-button .material-icons {
       color: white;
       font-size: 36px;
-      transform: translate(-18px,-12px);
+      transform: none;
     }
 
     #play-pause-button .material-icons:nth-of-type(2) {
@@ -627,102 +649,69 @@
         <div id="page-title" class="top-panel-item"><strong>GAN</strong> Lab</div>
 
         <div id="distribution-selection" class="top-panel-item">
-          <div class="top-column-title">Data Distribution</div>
+          <div class="top-column-title">データ分布</div>
           <div id="distribution-image-list">
             <div class="distribution-image">
-              <img class="distribution-item"
-                id="distribution-item-line" 
-                data-distribution-name="line" 
-                title="Simple line"
-                src="images/distribution-line.png" />
+              <img class="distribution-item" id="distribution-item-line" data-distribution-name="line" title="Simple line" src="images/distribution-line.png">
             </div>
             <div class="distribution-image">
-              <img class="distribution-item selected" 
-                id="distribution-item-gaussians" 
-                data-distribution-name="gaussians" 
-                title="Mixture of Gaussians" 
-                src="images/distribution-gaussians.png" />
+              <img class="distribution-item selected" id="distribution-item-gaussians" data-distribution-name="gaussians" title="Mixture of Gaussians" src="images/distribution-gaussians.png">
             </div>
             <div class="distribution-image">
-              <img class="distribution-item" 
-                id="distribution-item-ring" 
-                data-distribution-name="ring"
-                title="Ring" 
-                src="images/distribution-ring.png" />
+              <img class="distribution-item" id="distribution-item-ring" data-distribution-name="ring" title="Ring" src="images/distribution-ring.png">
             </div>
             <div class="distribution-image">
-              <img class="distribution-item" 
-                id="distribution-item-disjoint" 
-                data-distribution-name="disjoint" 
-                title="3 disjoint regions" 
-                src="images/distribution-disjoint.png" />
+              <img class="distribution-item" id="distribution-item-disjoint" data-distribution-name="disjoint" title="3 disjoint regions" src="images/distribution-disjoint.png">
             </div>
             <div class="distribution-image">
-              <i class="distribution-item material-icons" 
-                id="distribution-item-drawing" 
-                data-distribution-name="drawing"
-                title="Draw one by yourself">brush</i>
+              <i class="distribution-item material-icons" id="distribution-item-drawing" data-distribution-name="drawing" title="Draw one by yourself">brush</i>
             </div>
           </div>
           <div id="distribution-selection-checkbox">
-            <paper-checkbox id="toggle-pretrained" 
-              title="Train on top of a pre-trained model or train from scratch"
-              checked>
-              Use pre-trained model
+            <paper-checkbox id="toggle-pretrained" title="事前訓練済みモデルの上で訓練するか、ゼロから訓練するか" checked="">
+              事前訓練済みモデルを使用
             </paper-checkbox>
           </div>
         </div>
 
         <div id="timeline-controls" class="top-panel-item">
-          <button 
-            class="mdl-button mdl-js-button mdl-button--icon ui-resetButton"
-            id="reset-button" title="Reset the model">
+          <button class="mdl-button mdl-js-button mdl-button--icon ui-resetButton" id="reset-button" title="Reset the model">
             <i class="material-icons" id="button-top-reset">replay</i>
           </button>
           <button class="mdl-button mdl-js-button mdl-button--fab 
-            mdl-button--colored ui-playButton"
-            id="play-pause-button" title="Run/Pause training">
+            mdl-button--colored ui-playButton" id="play-pause-button" title="Run/Pause training">
             <i class="material-icons" id="button-top-play">play_arrow</i>
             <i class="material-icons" id="button-top-pause">pause</i>
           </button>
-          <button class="mdl-button mdl-js-button mdl-button--icon"
-            id="slow-step" title="Slow-motion mode" 
-            style="margin-left: 5px">
+          <button class="mdl-button mdl-js-button mdl-button--icon" id="slow-step" title="Slow-motion mode" style="margin-left: 5px">
             <i class="material-icons" id="button-top-slow">
               slow_motion_video
             </i>
           </button>
-          <button 
-            class="mdl-button mdl-js-button mdl-button--icon ui-stepButton"
-            id="next-step-button" title="Train for one epoch" 
-            style="margin-left: 5px">
+          <button class="mdl-button mdl-js-button mdl-button--icon ui-stepButton" id="next-step-button" title="Train for one epoch" style="margin-left: 5px">
             <i class="material-icons" id="button-top-next">skip_next</i>
           </button>
 
           <div id="step-buttons" style="display: none">
-            <button id="next-step-g-button" 
-              title="Train only generator for one epoch">
-              Generator
+            <button id="next-step-g-button" title="生成器のみを1エポック訓練">
+              生成器
             </button>
-            <button id="next-step-d-button" 
-              title="Train only discriminator for one epoch">
-              Discriminator
+            <button id="next-step-d-button" title="識別器のみを1エポック訓練">
+              識別器
             </button>
-            <button id="next-step-all-button" 
-              title="Train both discriminator and generator for one epoch">
-              Both
+            <button id="next-step-all-button" title="識別器と生成器の両方を1エポック訓練">
+              両方
             </button>
           </div>
         </div>
 
         <div id="iteration" class="top-panel-item">
-          <div class="top-column-title">Epoch</div>
+          <div class="top-column-title">エポック</div>
           <div id="iteration-count">0</div>
         </div>
 
         <div id="save" class="top-panel-item">
-          <button class="mdl-button mdl-js-button mdl-button--icon"
-            id="save-model" title="Save model" style="margin-left: 5px">
+          <button class="mdl-button mdl-js-button mdl-button--icon" id="save-model" title="Save model" style="margin-left: 5px">
             <i class="material-icons">save_alt</i>
           </button>
         </div>
@@ -732,72 +721,54 @@
     <div id="main-panel">
       <div id="main-panel-container" class="panel-container">
         <div id="model-visualization-container" class="panel-item">
-          <div class="panel-title" style="padding-left: 5px;"
-            title="Shows the architecture of a model and data flow">
-            Model Overview Graph
-            <button class="mdl-button mdl-js-button mdl-button--icon"
-              id="edit-model-button" title="Show/hide hyperparameters">
+          <div class="panel-title" style="padding-left: 5px;" title="Shows the architecture of a model and data flow">
+            モデル概観グラフ
+            <button class="mdl-button mdl-js-button mdl-button--icon" id="edit-model-button" title="ハイパーパラメータの表示/非表示">
               <i class="material-icons" id="button-graph-edit">mode_edit</i>
             </button>
           </div>
 
           <div id="model-vis-content-container">
             <svg id="model-vis-svg" class="">
-              <path d="M66,260 L102,260"
-                id="arrow-g-forward-i" class="d-update-flow g-update-flow" />
-              <path d="M248,260 L284,260"
-                id="arrow-g-forward-o" class="d-update-flow g-update-flow" />
-              <path d="M336,166 L372,166"
-                id="arrow-t-d-forward-i" class="d-update-flow" />
-              <path d="M518,166 L554,166"
-                id="arrow-t-d-forward-o" class="d-update-flow" />
-              <path d="M336,260 L372,260"
-                id="arrow-g-d-forward-i" class="d-update-flow g-update-flow" />
-              <path d="M518,260 L554,260"
-                id="arrow-g-d-forward-o" class="d-update-flow g-update-flow" />
+              <path d="M66,260 L102,260" id="arrow-g-forward-i" class="d-update-flow g-update-flow"></path>
+              <path d="M248,260 L284,260" id="arrow-g-forward-o" class="d-update-flow g-update-flow"></path>
+              <path d="M336,166 L372,166" id="arrow-t-d-forward-i" class="d-update-flow"></path>
+              <path d="M518,166 L554,166" id="arrow-t-d-forward-o" class="d-update-flow"></path>
+              <path d="M336,260 L372,260" id="arrow-g-d-forward-i" class="d-update-flow g-update-flow"></path>
+              <path d="M518,260 L554,260" id="arrow-g-d-forward-o" class="d-update-flow g-update-flow"></path>
 
-              <path d="M605,166 C625,166 615,213 640,213"
-                id="arrow-t-prediction-d-loss" class="d-update-flow" />
-              <path d="M605,260 C625,260 615,213 640,213"
-                id="arrow-g-prediction-d-loss" class="d-update-flow" />
+              <path d="M605,166 C625,166 615,213 640,213" id="arrow-t-prediction-d-loss" class="d-update-flow"></path>
+              <path d="M605,260 C625,260 615,213 640,213" id="arrow-g-prediction-d-loss" class="d-update-flow"></path>
               <path d="M640,213 L650,213 a10,10 0 0 0 10,-10
                 L660,40 a10,10 0 0 0 -10,-10
-                L445,30 a10,10 0 0 0 -10,10 L435,141"
-                id="arrow-d-loss-d" class="d-update-flow" />
+                L445,30 a10,10 0 0 0 -10,10 L435,141" id="arrow-d-loss-d" class="d-update-flow"></path>
 
               <path d="M605,260 L650,260 a10,10 0 0 1 10,10
-                L660,415 a10,10 0 0 1 -10,10 L336,425"
-                id="arrow-g-loss-g-1" class="g-update-flow" />
-              <path d="M289,425 L185,425 a10,10 0 0 1 -10,-10 L175,303"
-                id="arrow-g-loss-g-2" class="g-update-flow" />
+                L660,415 a10,10 0 0 1 -10,10 L336,425" id="arrow-g-loss-g-1" class="g-update-flow"></path>
+              <path d="M289,425 L185,425 a10,10 0 0 1 -10,-10 L175,303" id="arrow-g-loss-g-2" class="g-update-flow"></path>
             </svg>
 
             <div id="model-vis-div">
-              <div id="component-d-loss" class="model-component"
-                style="top: 160px; left: 667px">
+              <div id="component-d-loss" class="model-component" style="top: 160px; left: 667px">
                 <div id="d-loss-bar" class="loss-bar" title=""></div>
-                <div class="component-loss-label">Discriminator<br />loss</div>
+                <div class="component-loss-label">Discriminator<br>loss</div>
                 <div class="component-tooltip">
                   <span id="d-loss-value" title="loss"></span>
                 </div>
               </div>
 
-              <div id="component-g-loss" class="model-component"
-                style="top: 275px; left: 667px">
+              <div id="component-g-loss" class="model-component" style="top: 275px; left: 667px">
                 <div id="g-loss-bar" class="loss-bar" title=""></div>
-                <div class="component-loss-label">Generator<br />loss</div>
+                <div class="component-loss-label">Generator<br>loss</div>
                 <div class="component-tooltip">
                   <span id="g-loss-value" title="loss"></span>
                 </div>
               </div>
 
-              <div id="component-options-loss" class="model-component"
-              style="top: 220px; left: 667px">
+              <div id="component-options-loss" class="model-component" style="top: 220px; left: 667px">
                 <div class="config-item">
-                  <paper-dropdown-menu no-animations no-label-float>
-                    <paper-listbox attr-for-selected="value"
-                      id="loss-type-dropdown" class="dropdown-content"
-                      selected="{{lossType}}">
+                  <paper-dropdown-menu no-animations="" no-label-float="">
+                    <paper-listbox attr-for-selected="value" id="loss-type-dropdown" class="dropdown-content" selected="{{lossType}}">
                       <template is="dom-repeat" items="[[lossTypeOptions]]">
                         <paper-item value="[[item]]" label="[[item]]">
                           [[item]]
