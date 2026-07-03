@@ -1,3 +1,7 @@
 [build]
-  publish = "docs"
-  command = "echo prebuilt"
+  # ローカルでビルド済みの docs/ をそのまま配信する。
+  # base を docs にすることで、リポジトリ直下の package.json が検出されず、
+  # Netlify 上での yarn install(依存インストール)がスキップされる。
+  base = "docs"
+  publish = "."
+  command = "echo prebuilt - no build on Netlify"
