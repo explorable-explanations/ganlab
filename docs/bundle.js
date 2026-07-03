@@ -485,7 +485,7 @@ class GANLab extends GANLabPolymer {
     }
     onClickFinishDrawingButton() {
         if (this.drawing.drawingPositions.length === 0) {
-            alert('Draw something on canvas');
+            alert('キャンバスに何か描いてください');
         }
         else {
             const drawingElement = this.querySelector('#drawing-container');
@@ -1308,8 +1308,8 @@ class GANLab extends GANLabPolymer {
             this.costChart.destroy();
         }
         const costChartSpecification = [
-            { label: 'Discriminator\'s Loss', color: 'rgba(5, 117, 176, 0.5)' },
-            { label: 'Generator\'s Loss', color: 'rgba(123, 50, 148, 0.5)' }
+            { label: '識別器の損失', color: 'rgba(5, 117, 176, 0.5)' },
+            { label: '生成器の損失', color: 'rgba(123, 50, 148, 0.5)' }
         ];
         this.costChart = this.createChart('cost-chart', this.costChartData, costChartSpecification, 0);
         this.evalChartData = new Array(2);
