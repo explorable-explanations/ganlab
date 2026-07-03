@@ -42,14 +42,15 @@ yarn prep
 
 ## デプロイ用ビルド
 
-GitHub Pages等にデプロイするための静的ファイルを生成する場合は、以下のコマンドを実行します。
+このプロジェクトは Node.js 8 が必要な古い依存関係を含むため、Netlify等のCI上ではビルドせず、ローカルで静的ファイルを生成してからデプロイします。
 
 ```bash
 nvm use 8
-./scripts/build-demo
+./scripts/deploy-demo
 ```
 
-ビルドされたファイルは `docs/` ディレクトリに生成されます。
+ビルドされた公開用ファイルは `docs/` ディレクトリに生成されます。
 
+Netlifyでは `ganlab/netlify.toml` により、`docs/` をそのまま静的配信します。
 
 
