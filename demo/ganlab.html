@@ -652,19 +652,19 @@
           <div class="top-column-title">データ分布</div>
           <div id="distribution-image-list">
             <div class="distribution-image">
-              <img class="distribution-item" id="distribution-item-line" data-distribution-name="line" title="Simple line" src="images/distribution-line.png">
+              <img class="distribution-item" id="distribution-item-line" data-distribution-name="line" title="シンプルな直線" src="images/distribution-line.png">
             </div>
             <div class="distribution-image">
-              <img class="distribution-item selected" id="distribution-item-gaussians" data-distribution-name="gaussians" title="Mixture of Gaussians" src="images/distribution-gaussians.png">
+              <img class="distribution-item selected" id="distribution-item-gaussians" data-distribution-name="gaussians" title="混合ガウス分布" src="images/distribution-gaussians.png">
             </div>
             <div class="distribution-image">
-              <img class="distribution-item" id="distribution-item-ring" data-distribution-name="ring" title="Ring" src="images/distribution-ring.png">
+              <img class="distribution-item" id="distribution-item-ring" data-distribution-name="ring" title="リング" src="images/distribution-ring.png">
             </div>
             <div class="distribution-image">
-              <img class="distribution-item" id="distribution-item-disjoint" data-distribution-name="disjoint" title="3 disjoint regions" src="images/distribution-disjoint.png">
+              <img class="distribution-item" id="distribution-item-disjoint" data-distribution-name="disjoint" title="3つの離れた領域" src="images/distribution-disjoint.png">
             </div>
             <div class="distribution-image">
-              <i class="distribution-item material-icons" id="distribution-item-drawing" data-distribution-name="drawing" title="Draw one by yourself">brush</i>
+              <i class="distribution-item material-icons" id="distribution-item-drawing" data-distribution-name="drawing" title="自分で描く">brush</i>
             </div>
           </div>
           <div id="distribution-selection-checkbox">
@@ -675,20 +675,20 @@
         </div>
 
         <div id="timeline-controls" class="top-panel-item">
-          <button class="mdl-button mdl-js-button mdl-button--icon ui-resetButton" id="reset-button" title="Reset the model">
+          <button class="mdl-button mdl-js-button mdl-button--icon ui-resetButton" id="reset-button" title="モデルをリセット">
             <i class="material-icons" id="button-top-reset">replay</i>
           </button>
           <button class="mdl-button mdl-js-button mdl-button--fab 
-            mdl-button--colored ui-playButton" id="play-pause-button" title="Run/Pause training">
+            mdl-button--colored ui-playButton" id="play-pause-button" title="訓練の実行/一時停止">
             <i class="material-icons" id="button-top-play">play_arrow</i>
             <i class="material-icons" id="button-top-pause">pause</i>
           </button>
-          <button class="mdl-button mdl-js-button mdl-button--icon" id="slow-step" title="Slow-motion mode" style="margin-left: 5px">
+          <button class="mdl-button mdl-js-button mdl-button--icon" id="slow-step" title="スローモーションモード" style="margin-left: 5px">
             <i class="material-icons" id="button-top-slow">
               slow_motion_video
             </i>
           </button>
-          <button class="mdl-button mdl-js-button mdl-button--icon ui-stepButton" id="next-step-button" title="Train for one epoch" style="margin-left: 5px">
+          <button class="mdl-button mdl-js-button mdl-button--icon ui-stepButton" id="next-step-button" title="1エポックだけ訓練" style="margin-left: 5px">
             <i class="material-icons" id="button-top-next">skip_next</i>
           </button>
 
@@ -711,7 +711,7 @@
         </div>
 
         <div id="save" class="top-panel-item">
-          <button class="mdl-button mdl-js-button mdl-button--icon" id="save-model" title="Save model" style="margin-left: 5px">
+          <button class="mdl-button mdl-js-button mdl-button--icon" id="save-model" title="モデルを保存" style="margin-left: 5px">
             <i class="material-icons">save_alt</i>
           </button>
         </div>
@@ -721,7 +721,7 @@
     <div id="main-panel">
       <div id="main-panel-container" class="panel-container">
         <div id="model-visualization-container" class="panel-item">
-          <div class="panel-title" style="padding-left: 5px;" title="Shows the architecture of a model and data flow">
+          <div class="panel-title" style="padding-left: 5px;" title="モデルの構造とデータの流れを表示">
             モデル概観グラフ
             <button class="mdl-button mdl-js-button mdl-button--icon" id="edit-model-button" title="ハイパーパラメータの表示/非表示">
               <i class="material-icons" id="button-graph-edit">mode_edit</i>
@@ -751,17 +751,17 @@
             <div id="model-vis-div">
               <div id="component-d-loss" class="model-component" style="top: 160px; left: 667px">
                 <div id="d-loss-bar" class="loss-bar" title=""></div>
-                <div class="component-loss-label">Discriminator<br>loss</div>
+                <div class="component-loss-label">識別器の<br>損失</div>
                 <div class="component-tooltip">
-                  <span id="d-loss-value" title="loss"></span>
+                  <span id="d-loss-value" title="損失"></span>
                 </div>
               </div>
 
               <div id="component-g-loss" class="model-component" style="top: 275px; left: 667px">
                 <div id="g-loss-bar" class="loss-bar" title=""></div>
-                <div class="component-loss-label">Generator<br>loss</div>
+                <div class="component-loss-label">生成器の<br>損失</div>
                 <div class="component-tooltip">
-                  <span id="g-loss-value" title="loss"></span>
+                  <span id="g-loss-value" title="損失"></span>
                 </div>
               </div>
 
@@ -785,7 +785,7 @@
                   <div class="up-down-buttons">
                     <button class="mdl-button mdl-js-button mdl-button--icon"
                       id="k-d-steps-add-button" 
-                      title="Increase a step per epoch">
+                      title="エポックあたりの更新回数を増やす">
                       <i class="material-icons" id="button-k-d-steps-up">
                         keyboard_arrow_up
                       </i>
@@ -793,7 +793,7 @@
                     <br />
                     <button class="mdl-button mdl-js-button mdl-button--icon"
                       id="k-d-steps-remove-button" 
-                      title="Decrease a step per iter">
+                      title="エポックあたりの更新回数を減らす">
                       <i class="material-icons" id="button-k-d-steps-down">
                         keyboard_arrow_down
                       </i>
@@ -801,7 +801,7 @@
                   </div>
                   <div class="up-down-buttons">
                     <label>
-                      <span id="k-d-steps">2</span> update(s) per epoch</label>
+                      <span id="k-d-steps">2</span> 回更新 / エポック</label>
                   </div>
                 </div>
               </div>
@@ -812,7 +812,7 @@
                   <div class="up-down-buttons">
                     <button class="mdl-button mdl-js-button mdl-button--icon"
                       id="k-g-steps-add-button" 
-                      title="Increase a step per epoch">
+                      title="エポックあたりの更新回数を増やす">
                       <i class="material-icons" id="button-k-g-steps-up">
                         keyboard_arrow_up
                       </i>
@@ -820,7 +820,7 @@
                     <br />
                     <button class="mdl-button mdl-js-button mdl-button--icon"
                       id="k-g-steps-remove-button" 
-                      title="Decrease a step per epoch">
+                      title="エポックあたりの更新回数を減らす">
                       <i class="material-icons" id="button-k-g-steps-down">
                         keyboard_arrow_down
                       </i>
@@ -828,7 +828,7 @@
                   </div>
                   <div class="up-down-buttons">
                     <label>
-                      <span id="k-g-steps">1</span> update(s) per epoch</label>
+                      <span id="k-g-steps">1</span> 回更新 / エポック</label>
                   </div>
                 </div>
               </div>
@@ -838,7 +838,7 @@
                 style="top: 55px; left: 440px">
                 <div class="config-item" style="width: 120px">
                   <div class="up-down-buttons">
-                    <label>Optimizer:</label>
+                    <label>最適化:</label>
                   </div>
                   <div class="up-down-buttons" style="width: 65px">
                     <paper-dropdown-menu no-animations no-label-float>
@@ -857,7 +857,7 @@
                 </div>
                 <div class="config-item" style="width: 120px">
                   <div class="up-down-buttons">
-                    <label>Learning rate:</label>
+                    <label>学習率:</label>
                   </div>
                   <div class="up-down-buttons" style="width: 48px">
                     <paper-dropdown-menu no-animations no-label-float>
@@ -880,7 +880,7 @@
                 style="top: 335px; left: 180px">
                 <div class="config-item" style="width: 120px">
                   <div class="up-down-buttons">
-                    <label>Optimizer:</label>
+                    <label>最適化:</label>
                   </div>
                   <div class="up-down-buttons" style="width: 65px">
                     <paper-dropdown-menu no-animations no-label-float>
@@ -899,7 +899,7 @@
                 </div>
                 <div class="config-item" style="width: 120px">
                   <div class="up-down-buttons">
-                    <label>Learning rate:</label>
+                    <label>学習率:</label>
                   </div>
                   <div class="up-down-buttons" style="width: 48px">
                     <paper-dropdown-menu no-animations no-label-float>
@@ -920,25 +920,25 @@
 
               <div id="component-true-prediction" class="model-component"
                 style="top: 136px; left: 525px">
-                <div class="component-sub-label">Real</div>
+                <div class="component-sub-label">本物</div>
                 <svg id="svg-true-prediction"></svg>
               </div>
 
               <div id="component-generated-prediction" class="model-component"
                 style="top: 230px; left: 525px">
-                <div class="component-sub-label">Fake</div>
+                <div class="component-sub-label">偽物</div>
                 <svg id="svg-generated-prediction"></svg>
-                <div class="component-label">Prediction of<br />Samples</div>
+                <div class="component-label">サンプルの<br />予測</div>
               </div>
 
               <div id="component-discriminator"
                 class="model-component model-component-model"
                 style="top: 136px; left: 372px">
                 <svg id="svg-discriminator-output"></svg>
-                <div class="component-label">Discriminator
+                <div class="component-label">識別器
                   <div id="overlap-toggle" class="checkbox-toggle">
                     <paper-checkbox type="checkbox" id="overlap-plots" checked
-                      title="show/hide discriminator's classification">
+                      title="識別器の分類結果を表示/非表示">
                     </paper-checkbox>
                   </div>
                 </div>
@@ -950,14 +950,14 @@
                 <div class="config-item" style="width: 175px">
                   <div class="up-down-buttons">
                     <button class="mdl-button mdl-js-button mdl-button--icon"
-                      id="d-layers-add-button" title="Add a layer">
+                      id="d-layers-add-button" title="層を追加">
                       <i class="material-icons" id="button-d-layers-up">
                         keyboard_arrow_up
                       </i>
                     </button>
                     <br />
                     <button class="mdl-button mdl-js-button mdl-button--icon"
-                      id="d-layers-remove-button" title="Remove a layer">
+                      id="d-layers-remove-button" title="層を削除">
                       <i class="material-icons" id="button-d-layers-down">
                         keyboard_arrow_down
                       </i>
@@ -965,12 +965,12 @@
                   </div>
                   <div class="up-down-buttons">
                     <label>
-                      <span id="num-d-layers">1</span> hidden layer(s)</label>
+                      隠れ層: <span id="num-d-layers">1</span></label>
                   </div>
                   <div class="up-down-buttons">
                     <button class="mdl-button mdl-js-button mdl-button--icon"
                       id="d-neurons-add-button" 
-                      title="Add a neuron for each layer">
+                      title="各層にニューロンを追加">
                       <i class="material-icons" id="button-d-neurons-up">
                         keyboard_arrow_up
                       </i>
@@ -978,14 +978,14 @@
                     <br />
                     <button class="mdl-button mdl-js-button mdl-button--icon"
                       id="d-neurons-remove-button" 
-                      title="Remove a neuron for each layer">
+                      title="各層からニューロンを削除">
                       <i class="material-icons" id="button-d-neurons-down">
                         keyboard_arrow_down
                       </i>
                     </button>
                   </div>
                   <div class="up-down-buttons">
-                    <label><span id="num-d-neurons">8</span> neuron(s)</label>
+                    <label>ニューロン: <span id="num-d-neurons">8</span></label>
                   </div>
                 </div>
               </div>
@@ -994,9 +994,9 @@
                 class="model-component model-component-model"
                 style="top: 136px; left: 102px">
                   <svg id="svg-generator-manifold"></svg>
-                  <div class="component-label">Generator
+                  <div class="component-label">生成器
                     <div id="manifold-toggle" class="checkbox-toggle"
-                      title="show/hide generator's manifold">
+                      title="生成器の多様体を表示/非表示">
                       <paper-checkbox type="checkbox" id="enable-manifold">
                       </paper-checkbox>
                     </div>
@@ -1009,14 +1009,14 @@
                 <div class="config-item" style="width: 175px">
                   <div class="up-down-buttons">
                     <button class="mdl-button mdl-js-button mdl-button--icon"
-                      id="g-layers-add-button" title="Add a layer">
+                      id="g-layers-add-button" title="層を追加">
                       <i class="material-icons" id="button-g-layer-up">
                         keyboard_arrow_up
                       </i>
                     </button>
                     <br />
                     <button class="mdl-button mdl-js-button mdl-button--icon"
-                      id="g-layers-remove-button" title="Remove a layer">
+                      id="g-layers-remove-button" title="層を削除">
                       <i class="material-icons" id="button-g-layer-down">
                         keyboard_arrow_down
                       </i>
@@ -1024,12 +1024,12 @@
                   </div>
                   <div class="up-down-buttons">
                     <label>
-                      <span id="num-g-layers">1</span> hidden layer(s)</label>
+                      隠れ層: <span id="num-g-layers">1</span></label>
                   </div>
                   <div class="up-down-buttons">
                     <button class="mdl-button mdl-js-button mdl-button--icon"
                       id="g-neurons-add-button" 
-                      title="Add a neuron for each layer">
+                      title="各層にニューロンを追加">
                       <i class="material-icons" id="button-g-neurons-up">
                         keyboard_arrow_up
                       </i>
@@ -1037,14 +1037,14 @@
                     <br />
                     <button class="mdl-button mdl-js-button mdl-button--icon"
                       id="g-neurons-remove-button" 
-                      title="Remove a neuron for each layer">
+                      title="各層からニューロンを削除">
                       <i class="material-icons" id="button-g-neurons-down">
                         keyboard_arrow_down
                       </i>
                     </button>
                   </div>
                   <div class="up-down-buttons">
-                    <label><span id="num-g-neurons">8</span> neuron(s)</label>
+                    <label>ニューロン: <span id="num-g-neurons">8</span></label>
                   </div>
                 </div>
               </div>
@@ -1052,15 +1052,15 @@
               <div id="component-discriminator-gradients" 
                 class="model-component"
                 style="top: 7px; left: 430px">
-                <div class="component-label">Gradients</div>
+                <div class="component-label">勾配</div>
               </div>
 
               <div id="component-generator-gradients" class="model-component"
                 style="top: 390px; left: 255px">
                 <svg id="svg-generator-gradients"></svg>
-                <div class="component-label">Gradients
+                <div class="component-label">勾配
                   <div id="g-gradients-toggle" class="checkbox-toggle"
-                    title="show/hide gradients for generator"
+                    title="生成器の勾配を表示/非表示"
                     style="right: 13px; top: -1px">
                     <paper-checkbox type="checkbox" id="show-g-gradients" 
                       checked>
@@ -1071,9 +1071,9 @@
 
               <div id="component-true-samples" class="model-component"
                 style="top: 136px; left: 255px">
-                <div class="component-sub-label">Real
+                <div class="component-sub-label">本物
                   <div id="t-samples-toggle" class="checkbox-toggle"
-                    title="show/hide real samples">
+                    title="本物のサンプルを表示/非表示">
                     <paper-checkbox type="checkbox" id="show-t-samples" 
                       checked>
                     </paper-checkbox>
@@ -1084,22 +1084,22 @@
 
               <div id="component-generated-samples" class="model-component"
                 style="top: 230px; left: 255px">
-                <div class="component-sub-label">Fake
+                <div class="component-sub-label">偽物
                   <div id="g-samples-toggle" class="checkbox-toggle"
-                    title="show/hide fake samples">
+                    title="偽物のサンプルを表示/非表示">
                     <paper-checkbox type="checkbox" id="show-g-samples" 
                       checked>
                     </paper-checkbox>
                   </div>
                 </div>
                 <svg id="svg-generated-samples"></svg>
-                <div class="component-label">Samples</div>
+                <div class="component-label">サンプル</div>
               </div>
 
               <div id="component-noise" class="model-component"
                 style="top: 230px; left: -15px">
                 <svg id="svg-noise"></svg>
-                <div class="component-label">Noise</div>
+                <div class="component-label">ノイズ</div>
               </div>
 
               <div id="component-options-noise" class="model-component-options"
@@ -1125,54 +1125,54 @@
                 class="tooltip tooltip-for-d"
                 style="top: 0; left: 0px">
                 <div class="tooltip-number">1</div>
-                Generator derives samples from noise
+                生成器がノイズからサンプルを生成
               </div>
               <div id="tooltip-d-prediction" class="tooltip tooltip-for-d"
                 style="top: 0; left: 150px">
                 <div class="tooltip-number">2</div>
-                Discriminator classifies samples
+                識別器がサンプルを分類
               </div>
               <div id="tooltip-d-loss" class="tooltip tooltip-for-d"
                 style="top: 0; left: 300px">
                 <div class="tooltip-number">3</div>
-                Computes discriminator loss
+                識別器の損失を計算
               </div>
               <div id="tooltip-d-gradients" class="tooltip tooltip-for-d"
                 style="top: 0; left: 450px">
                 <div class="tooltip-number">4</div>
-                Computes discriminator gradients
+                識別器の勾配を計算
               </div>
               <div id="tooltip-update-discriminator" 
                 class="tooltip tooltip-for-d"
                 style="top: 0; left: 600px">
                 <div class="tooltip-number">5</div>
-                Updates discriminator based on gradients
+                勾配に基づいて識別器を更新
               </div>
               <div id="tooltip-g-generated-samples" 
                 class="tooltip tooltip-for-g"
                 style="top: 500px; left: 0px">
                 <div class="tooltip-number">1</div>
-                Generator derives samples from noise
+                生成器がノイズからサンプルを生成
               </div>
               <div id="tooltip-g-prediction" class="tooltip tooltip-for-g"
                 style="top: 500px; left: 150px">
                 <div class="tooltip-number">2</div>
-                Discriminator classifies fake samples only
+                識別器が偽物のサンプルのみを分類
               </div>
               <div id="tooltip-g-loss" class="tooltip tooltip-for-g"
                 style="top: 500px; left: 300px">
                 <div class="tooltip-number">3</div>
-                Computes generator loss
+                生成器の損失を計算
               </div>
               <div id="tooltip-g-gradients" class="tooltip tooltip-for-g"
                 style="top: 500px; left: 450px">
                 <div class="tooltip-number">4</div>
-                Computes generator gradients
+                生成器の勾配を計算
               </div>
               <div id="tooltip-update-generator" class="tooltip tooltip-for-g"
                 style="top: 500px; left: 600px">
                 <div class="tooltip-number">5</div>
-                Updates generator based on gradients
+                勾配に基づいて生成器を更新
               </div>
             </div>
           </div>
@@ -1182,9 +1182,8 @@
 
         <div id="visualization-container" class="panel-item">
           <div class="panel-title"
-            title="Visualizes components in the model overview graph as 
-multiple layers. The layers can be turned on or off using checkboxes.">
-            Layered Distributions
+            title="モデル概観グラフの構成要素を複数のレイヤーとして重ねて可視化します。チェックボックスでレイヤーの表示を切り替えられます。">
+            分布の重ね合わせ表示
           </div>
 
           <div id="vis-content-container">
@@ -1207,49 +1206,44 @@ multiple layers. The layers can be turned on or off using checkboxes.">
 
             <div id="layers-descriptions">
               <div class="layers-descriptions-section">
-                Each dot is a 2D data sample:
+                各点は2次元のデータサンプルです:
                 <span id="toggle-right-real-samples" 
                   class="toggle-right checked"
-                  title="click to toggle this layer"
-                  style="color: var(--real-data-color);">real samples</span>;
+                  title="クリックでこのレイヤーを表示/非表示"
+                  style="color: var(--real-data-color);">本物のサンプル</span>、
                 <span id="toggle-right-fake-samples"
                   class="toggle-right checked"
-                  title="click to toggle this layer"
-                  style="color: var(--generator-color);">fake samples</span>.
+                  title="クリックでこのレイヤーを表示/非表示"
+                  style="color: var(--generator-color);">偽物のサンプル</span>。
               </div>
               <div class="layers-descriptions-section">
-                Background colors of grid cells represent
+                グリッドの背景色は
                 <span id="toggle-right-discriminator"
                   class="toggle-right checked"
-                  title="click to toggle this layer"
+                  title="クリックでこのレイヤーを表示/非表示"
                   style="color: rgb(64, 128, 247);">
-                    discriminator</span>'s classifications.
+                    識別器</span>の分類結果を表します。
                 <br />
-                Samples in
-                <span style="color: var(--real-data-color);">green regions</span>
-                are likely to be real;
-                those in
-                <span style="color: var(--generator-color);">purple regions</span>
-                likely fake.
+                <span style="color: var(--real-data-color);">緑の領域</span>のサンプルは本物と、
+                <span style="color: var(--generator-color);">紫の領域</span>のサンプルは偽物と判定されやすいことを示します。
               </div>
               <div class="layers-descriptions-section">
-                <strong>Manifold</strong> represents
+                <strong>多様体</strong>は
                 <span id="toggle-right-generator"
                   class="toggle-right"
-                  title="click to toggle this layer"
+                  title="クリックでこのレイヤーを表示/非表示"
                   style="color: var(--generator-color);">
-                    generator</span>'s transformation results from noise space.
+                    生成器</span>がノイズ空間を変換した結果を表します。
                 <br />
-                Opacity encodes density:
-                darker purple means more samples in smaller area.
+                不透明度は密度を表します。紫が濃いほど、狭い領域に多くのサンプルが集まっています。
               </div>
               <div class="layers-descriptions-section"> 
-                Pink lines from fake samples represent
+                偽物のサンプルから伸びるピンクの線は、生成器の
                 <span id="toggle-right-gradients"
                   class="toggle-right checked"
-                  title="click to toggle this layer"
+                  title="クリックでこのレイヤーを表示/非表示"
                   style="color: var(--gradient-color);">
-                  gradients</span> for generator.
+                  勾配</span>を表します。
                 <br />
                 <svg width="12" height="12">
                   <circle class="generated-dot" r="2"
@@ -1258,8 +1252,7 @@ multiple layers. The layers can be turned on or off using checkboxes.">
                     transform="translate(2,10)"
                     points="0,0 1,1 10,-10 -1,-1"></polygon>
                 </svg> 
-                This sample needs to move upper right 
-                to decrease generator's loss.
+                このサンプルは、生成器の損失を減らすために右上へ移動する必要があります。
               </div>
             </div>
 
@@ -1267,18 +1260,18 @@ multiple layers. The layers can be turned on or off using checkboxes.">
               <canvas id="input-drawing-canvas" 
                 width="400" height="400"></canvas>
               <div id="drawing-instruction">
-                Draw a distribution above, then click the apply button.
+                上の領域に分布を描いてから、適用ボタンをクリックしてください。
               </div>
               <button id="finish-drawing" 
                 class="mdl-button mdl-js-button mdl-button--raised">
-                Apply
+                適用
               </button>
             </div>
           </div>
         </div>
 
         <div id="charts-panel" class="panel-item">
-          <div class="panel-title">Metrics</div>
+          <div class="panel-title">評価指標</div>
 
           <div id="chart-container">
             <canvas id="cost-chart" width="180" height="180"></canvas>

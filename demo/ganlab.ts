@@ -1640,8 +1640,8 @@ class GANLab extends GANLabPolymer {
       this.evalChart.destroy();
     }
     const evalChartSpecification = [
-      { label: 'KL Divergence (by grid)', color: 'rgba(220, 80, 20, 0.5)' },
-      { label: 'JS Divergence (by grid)', color: 'rgba(200, 150, 10, 0.5)' }
+      { label: 'KLダイバージェンス(グリッド推定)', color: 'rgba(220, 80, 20, 0.5)' },
+      { label: 'JSダイバージェンス(グリッド推定)', color: 'rgba(200, 150, 10, 0.5)' }
     ];
     this.evalChart = this.createChart(
       'eval-chart', this.evalChartData, evalChartSpecification, 0);
